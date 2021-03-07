@@ -2,8 +2,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello</h1>
+    <div className="app">
+      <h1>I build spotyif clone</h1>
     </div>
   );
 }
