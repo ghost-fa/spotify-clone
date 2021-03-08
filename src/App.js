@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
+import SpotifyWebApi from "spotify-web-api-js";
+
+const spotify = new SpotifyWebApi();
 
 function App() {
   // short time memore stor to save value and not lost if refrech
@@ -17,6 +20,13 @@ function App() {
     // token inside memore
     if (_token) {
       setToken(_token);
+
+      // give the access token to spotify api
+      spotify.setAccessToken(_token);
+
+      spotify.getMe().then((user) => {
+        console.log(user);
+      });
     }
     console.log("I have The Token", token);
   }, []);
