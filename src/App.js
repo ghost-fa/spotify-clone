@@ -9,7 +9,7 @@ import { useDataLayerValue } from "./DataLayer";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  // short time memore stor to save value and not lost if refrech
+  // pull and stor user from the dataLayer
 
   const [{ user, token }, dispatch] = useDataLayerValue();
 
@@ -37,12 +37,12 @@ function App() {
         });
       });
     }
-    console.log("I have The Token", token);
   }, []);
-  console.log(token);
-
-  console.log(user);
-  return <div className="app">{token ? <Player /> : <Login />}</div>;
+  return (
+    <div className="app">
+      {token ? <Player spotify={spotify} /> : <Login />}
+    </div>
+  );
 }
 
 export default App;
