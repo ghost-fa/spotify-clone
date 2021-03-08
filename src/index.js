@@ -8,7 +8,6 @@ import reducer, { initialState } from "./reducer";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  // add dataLayer rap the app inside dataLayer
   <React.StrictMode>
     <DataLayer initialState={initialState} reducer={reducer}>
       <App />
