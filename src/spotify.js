@@ -5,7 +5,7 @@ const redirectUri = "http://localhost:3000/";
 const clientId = "b4fa7027b8dd4a038984f96e62d14be9";
 
 const scopes = [
-  `user-read-currently-playing user-read-recently-played user-read-playback-state user-top-read user-modify-playback-state`,
+  `user-read-currently-playing user-read-recently-played user-read-playback-state user-top-read user-modify-playback-state `,
 ];
 
 // get the acces token from response
