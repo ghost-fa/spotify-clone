@@ -4,13 +4,13 @@
   justify-content: space-between;
   bottom: 0;
   height: 65px;
-  width: 97%;
+  width: 100%;
   background-color: #282828;
   padding: 20px;
 }
 
 .footer__right * .MuiSlider-root {
-  color: green;
+  color: #1ed15e;
 }
 
 .footer__left {
@@ -58,8 +58,8 @@
 
 .footer__right {
   flex: 0.3;
-  display: flex;
-  justify-content: space-between;
   color: white;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }

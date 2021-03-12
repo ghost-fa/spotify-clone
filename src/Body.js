@@ -8,16 +8,16 @@ import { useDataLayerValue } from "./DataLayer";
 import SongRow from "./SongRow";
 
 function Body(spotify) {
-  const [{ discover_Weekly }, dispatch] = useDataLayerValue();
+  const [{ discover_weekly }] = useDataLayerValue();
   return (
     <div className="body">
       <Header spotify={spotify} />
       <div className="bod__info">
-        <img src={discover_Weekly?.images[0].url} alt="" />
+        <img src={discover_weekly?.images[0].url} alt="" />
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
           <h2>Discover Weekly</h2>
-          <p>{discover_Weekly?.description}.</p>
+          <p>{discover_weekly?.description}.</p>
         </div>
       </div>
       <div className="body__songs">
@@ -26,9 +26,9 @@ function Body(spotify) {
           <FavoriteIcon fontSize="large" />
           <MoreHorizIcon />
         </div>
-        {discover_Weekly?.tracks.items.map((item) => {
-          <SongRow track={item.track} />;
-        })}
+        {discover_weekly?.tracks.items.map((item) => (
+          <SongRow track={item.track} />
+        ))}
       </div>
     </div>
   );
