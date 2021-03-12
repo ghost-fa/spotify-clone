@@ -1,17 +1,19 @@
 import React from "react";
 import "./Body.css";
 import Header from "./Header";
+import { useDataLayerValue } from "./DataLayer";
 
 function Body(spotify) {
+  const [{ discover_Weekly }, dispatch] = useDataLayerValue();
   return (
     <div className="body">
       <Header spotify={spotify} />
       <div className="bod__info">
-        <img src="https://i.scdn.co/image/6683aad217c1" alt="" />
+        <img src={discover_Weekly?.images[0].url} alt="" />
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
           <h2>Discover Weekly</h2>
-          <p>description....</p>
+          <p>{discover_Weekly?.description}.</p>
         </div>
       </div>
     </div>
