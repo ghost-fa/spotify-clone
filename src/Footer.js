@@ -15,7 +15,7 @@ function Footer() {
       <div className="footer__left">
         <img
           className="footer__albumLogo"
-          src="https://upload.wikimedia.org/wikipedia"
+          src="https://cdn.shoplo.com/9646/products/th2048/abag/5402-5398-okladka-hotel-mafija-poretuszu.jpg"
           alt=""
         />
         <div className="footer__songInfo">

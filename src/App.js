@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
@@ -11,7 +11,7 @@ const spotify = new SpotifyWebApi();
 function App() {
   // pull and stor user from the dataLayer
 
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
 
   // run code based on a given condition
   useEffect(() => {
@@ -48,9 +48,15 @@ function App() {
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
         });
+        spotify.getMyTopArtists().then((response) =>
+          dispatch({
+            type: "SET_TOP_ARTISTS",
+            top_artists: response,
+          })
+        );
       });
     }
-  }, []);
+  }, [token, dispatch]);
   return (
     <div className="app">
       {token ? <Player spotify={spotify} /> : <Login />}
