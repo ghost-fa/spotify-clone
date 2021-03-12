@@ -20,6 +20,10 @@ function Sidebar() {
       <br />
       <strong className="sidebar__title">PLAYLISTS</strong>
       <hr />
+
+      <SidebarOption title="ip hop" />
+      <SidebarOption title="Rock" />
+      <SidebarOption title="RnB" />
     </div>
   );
 }
